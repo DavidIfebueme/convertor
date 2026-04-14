@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# convertor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+convertor is a tauri v2 mobile-first utility app with 4 modules:
+- convert
+- calc
+- notes
+- clock
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## stack
 
-## React Compiler
+- react + typescript + vite
+- tauri v2
+- framer motion
+- tauri plugin store
+- tauri plugin http
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## local setup
 
-## Expanding the ESLint configuration
+install dependencies:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+start the web app:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+build the web app:
+
+```bash
+npm run build
+```
+
+## android testing (usb)
+
+on the android device:
+- enable developer options
+- enable usb debugging
+- approve the usb debugging prompt
+
+on the development machine:
+
+```bash
+adb devices
+npm run tauri android dev
+```
+
+
+## apk build
+
+build a debug apk:
+
+```bash
+npm run tauri android build --debug
+```
+
+apk output:
+
+src-tauri/gen/android/app/build/outputs/apk/universal/debug/app-universal-debug.apk
+
+## appetize link
+
+public demo link:
+
+add appetize url [here](https://appetize.io/app/b_xhe42egqjaljsa5m5rf2irbegq)
+
+
