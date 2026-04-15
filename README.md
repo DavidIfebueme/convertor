@@ -66,6 +66,6 @@ src-tauri/gen/android/app/build/outputs/apk/universal/debug/app-universal-debug.
 
 public demo link:
 
-add appetize url [here](https://appetize.io/app/b_xhe42egqjaljsa5m5rf2irbegq)
+add appetize url [here](https://appetize.io/app/b_qu4prkyqpofnnrq4qx6s63tpr4)
 
 
